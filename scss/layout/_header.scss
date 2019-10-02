@@ -5,56 +5,132 @@
 /* Header */
 
 .header {
-    margin-bottom: 1rem;
-    font-family: "Barlow", sans-serif;
+  margin-bottom: 1rem;
+  font-family: "Barlow", sans-serif;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0;
+  animation-name: fade-in;
+  animation-duration: 2s;
+  animation-delay: 1s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+
+  @include media(">=0", "<small") {
     height: 32vh;
     background-image: url(../img/landscape.svg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    // opacity: 0;
-    // animation-name: fade-in;
-    // animation-duration: 2s;
-    // animation-delay: 1s;
-    // animation-timing-function: ease-out;
-    // animation-fill-mode: forwards;
+  }
 
+  @include media(">=small", "<medium") {
+    height: 50vh;
+    background-image: url(../img/landscape.svg);
+  }
 
+  @include media(">=medium", "<large") {
+    height:50vh;
+    background-image: url(../img/landscape-mask.svg);
+  }
+
+  @include media(">=large", "<huge") {
+    height: 80vh;
+    background-image: url(../img/landscape-mask.svg);
+  }
+
+  @include media(">=huge") {
+    height: 95vh;
+    background-image: url(../img/landscape-mask.svg);
+  }
 
   &__text-box {
     position: absolute;
-    top: 13%;
-    left: 13%;
+
     transform: translate(0, -50%);
     backface-visibility: hidden;
+
+    @include media(">=0", "<xsmall") {
+      top: 15%;
+      left: 13%;
+    }
+
+    @include media(">=xsmall", "<small") {
+      top: 15%;
+      left: 13%;
+    }
+
+    @include media(">=small", "<medium") {
+      top: 20%;
+      left: 11%;
+    }
+
+    @include media(">=medium", "<large") {
+      top: 25%;
+      left: 5%;
+      transform: translate(0, -50%);
+    }
+
+    @include media(">=large", "<huge") {
+      top: 45%;
+      left: 8%;
+      transform: translate(0, -50%);
+    }
+
+    @include media(">=huge") {
+      top: 45%;
+      left: 4%;
+      transform: translate(0, -50%);
+    }
   }
 
   &__title {
     color: $color-2;
-    font-size: 2rem;
     line-height: 0.8em;
     backface-visibility: hidden;
+
+    @include media(">=0", "<xsmall") {
+      font-size: 2rem;
+    }
+
+    @include media(">=xsmall", "<small") {
+      font-size: 2rem;
+    }
+
+    @include media(">=small", "<medium") {
+      font-size: 3rem;
+    }
+
+    @include media(">=medium", "<large") {
+      font-size: 4rem;
+    }
+
+    @include media(">=large", "<huge") {
+      font-size: 5rem;
+    }
+
+    @include media(">=huge") {
+      font-size: 6rem;
+    }
 
     &--thin {
       font-weight: $thin;
       display: block;
-      // opacity: 0;
-      // animation-name: move-from-left;
-      // animation-duration: 2s;
-      // animation-delay: 1s;
-      // animation-timing-function: ease-out;
-      // animation-fill-mode: forwards;
+      opacity: 0;
+      animation-name: move-from-left;
+      animation-duration: 2s;
+      animation-delay: 1s;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
     }
 
     &--thick {
       font-weight: $thick;
       letter-spacing: 0.13em;
       display: block;
-      // opacity: 0;
-      // animation-name: move-from-right;
-      // animation-duration: 2s;
-      // animation-delay: 1s;
-      // animation-timing-function: ease-out;
-      // animation-fill-mode: forwards;
+      opacity: 0;
+      animation-name: move-from-right;
+      animation-duration: 2s;
+      animation-delay: 1s;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
     }
   }
 }
@@ -62,13 +138,42 @@
 /* Balloon */
 .balloon {
   position: absolute;
-  top: 10vh;
-  left: 48vw;
-  width: 40%;
-  // opacity: 0;
-  // animation-name: move-from-top;
-  // animation-duration: 2s;
-  // animation-delay: 1s;
-  // animation-timing-function: ease-out;
-  // animation-fill-mode: forwards;
+  top: 20vh;
+  left: 52vw;
+  opacity: 0;
+  animation-name: move-from-top;
+  animation-duration: 2s;
+  animation-delay: 1s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+
+  @include media(">=0", "<small") {
+    width: 25%;
+    top: 10vh;
+  }
+
+  @include media(">=small") {
+    width: 30%;
+    top: 20vh;
+    left: 60vw;
+  }
+
+    @include media(">=small", "<medium") {
+    width: 30%;
+    top: 20vh;
+    left: 60vw;
+  }
+
+  @include media(">=medium", "<large") {
+    width: 24%;
+    top: 10vh;
+    left: 57vw;
+  }
+
+  @include media(">=large", "<huge") {
+  }
+
+  @include media(">=huge") {
+  }
+
 }

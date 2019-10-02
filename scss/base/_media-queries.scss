@@ -1,0 +1,18 @@
+/* 
+ base/_animations.scss 
+*/
+
+/* Breakpoints */
+$bp-xsmall: 320px;
+$bp-small: 480px;
+$bp-medium: 640px;
+$bp-large: 960px;
+$bp-huge: 1280px;
+
+$breakpoints: (
+  "xsmall": $bp-xsmall,
+  "small": $bp-small,
+  "medium": $bp-medium,
+  "large": $bp-large,
+  "huge": $bp-huge
+);

@@ -2,23 +2,84 @@
  layout/_learn-more.scss 
 */
 
-// .learn-more {
-//   background-repeat: no-repeat;
-//   margin-top: 2rem;
-//   background-image: linear-gradient(rgba(242, 145, 27, 0.8), rgba(242, 145, 27, 0.8)),
-//     url(../img/hot-air-ballons-cm-1000x1500.jpg);
-//   background-size: cover;
-//   background-position: left top;
-//   background-blend-mode: color;
-//   transform: skewY(4deg);
-//   padding: 1rem .5rem 5rem;
-// }
+.learn-more__box {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left top;
+  background-blend-mode: color;
+  margin-top: -4rem;
 
-// .icon {
-//   background-color: $color-offwhite;
-//   transform: skewY(-4deg);
-//   width: 90%;
-//   margin: 0 auto;
-//   margin-top: 4rem;
-//   padding: 2rem;
-// }
+  @include media(">=0", "<small") {
+    background-image: linear-gradient(rgba(242, 145, 27, 0.8), rgba(242, 145, 27, 0.8)),
+      url(../img/hot-air-ballons-cm-320x2000.jpg);
+    padding: 1rem 0.5rem 5rem;
+  }
+
+  @include media(">=small", "<medium") {
+    padding: 1rem 0.5rem 5rem;
+    background-image: linear-gradient(rgba(242, 145, 27, 0.8), rgba(242, 145, 27, 0.8)),
+      url(../img/hot-air-ballons-cm-480x2000.jpg);
+  }
+
+  @include media(">=medium", "<large") {
+    margin-top: -2rem;
+    padding: 2rem 3rem;
+    padding-bottom: 10rem;
+    background-image: linear-gradient(rgba(242, 145, 27, 0.8), rgba(242, 145, 27, 0.8)),
+      url(../img/hot-air-ballons-cm-480x2000.jpg);
+  }
+
+  @include media(">=large", "<huge") {
+    margin-top: -3.5rem;
+    padding: 5rem 1rem;
+    background-image: linear-gradient(rgba(242, 145, 27, 0.8), rgba(242, 145, 27, 0.8)),
+      url(../img/hot-air-ballons-cm-1000x1500.jpg);
+  }
+    @include media(">=huge") {
+    margin-top: -5rem;
+    padding: 5rem 1rem;
+    background-image: linear-gradient(rgba(242, 145, 27, 0.8), rgba(242, 145, 27, 0.8)),
+      url(../img/hot-air-ballons-cm-1000x1500.jpg);
+  }
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1rem;
+
+  @include media(">=large") {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
+  }
+}
+
+.learn-more__card {
+  background-color: $color-offwhite;
+
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 4rem;
+  padding: 2rem;
+  box-shadow: 1rem 1rem 1rem rgba($color-black, 0.25);
+  border-radius: 1rem;
+
+  transition: transform 0.5s;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+
+.learn-more__card:hover {
+  transform: translateY(-1rem) scale(1.025);
+}
+
+.learn-more__title {
+  font-size: 1.6rem;
+  text-align: center;
+  color: $color-2;
+  font-family: $font-title, sans-serif;
+  font-weight: $thick;
+  letter-spacing: 0.3rem;
+}

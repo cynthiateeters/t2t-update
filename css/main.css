@@ -1,6 +1,10 @@
 /* 
  main.scss
 */
+/* VENDORS */
+/* 
+ vendors/_include-media.scss
+*/
 /* PARTIALS */
 /* 
  abstracts/_variables.scss 
@@ -16,7 +20,7 @@ color-5: rgba(191, 155, 147, 1);
 */
 /* Color Theme Swatches in Hex */
 /* 
- abstracts/_functions.scss 
+ abstracts/_mixins.scss 
 */
 /* 
  abstracts/_functions.scss 
@@ -27,7 +31,8 @@ color-5: rgba(191, 155, 147, 1);
 @import url("https://fonts.googleapis.com/css?family=Barlow:300,400,700|Montserrat&display=swap");
 html {
   box-sizing: border-box;
-  font-size: 16px; }
+  font-size: 16px;
+  scroll-behavior: smooth; }
 
 *,
 *:before,
@@ -60,6 +65,19 @@ img {
 /*
 End CSS Reset 
 */
+/* 
+ base/_animations.scss 
+*/
+/* Breakpoints */
+/* 
+ base/_utilities.scss 
+*/
+.u-skew {
+  transform: skewY(5deg); }
+
+.u-no-skew {
+  transform: skewY(-5deg); }
+
 /* 
  base/_typography.scss 
 */
@@ -109,12 +127,115 @@ End CSS Reset
     opacity: 1;
     transform: translateX(0); } }
 
+/* Move From Bottom */
+@keyframes move-from-bottom {
+  0% {
+    opacity: 0;
+    transform: translateY(100px); }
+  60% {
+    opacity: 1;
+    transform: translateY(-10%); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
 /* Fade In */
 @keyframes fade-in {
   0% {
     opacity: 0; }
   100% {
     opacity: 1; } }
+
+/* 
+ components/_buttons.scss 
+*/
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.5s;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); }
+
+.btn--animated {
+  animation-name: move-from-bottom;
+  animation-duration: 2s;
+  animation-delay: 1s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: backwards; }
+
+.btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); }
+
+.btn:active {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); }
+
+.btn--primary {
+  background-color: #f2275d;
+  color: #ffffff;
+  display: inline-block;
+  position: absolute;
+  left: 12%;
+  top: 28%;
+  text-align: center;
+  border-radius: 100px; }
+
+@media (min-width: 0) and (max-width: 319px) {
+  .btn--primary {
+    padding: 0.1rem 0.4rem;
+    left: 12%;
+    top: 28%; } }
+
+@media (min-width: 320px) and (max-width: 479px) {
+  .btn--primary {
+    padding: 0.1rem 0.4rem;
+    left: 12%;
+    top: 28%; } }
+
+@media (min-width: 480px) and (max-width: 639px) {
+  .btn--primary {
+    padding: 0.1rem 0.4rem;
+    left: 12%;
+    top: 38%; } }
+
+@media (min-width: 640px) and (max-width: 959px) {
+  .btn--primary {
+    padding: 0.1rem 0.8rem;
+    left: 12%;
+    top: 40%; } }
+
+@media (min-width: 960px) and (max-width: 1279px) {
+  .btn--primary {
+    padding: 0.1rem 1rem;
+    left: 12%;
+    top: 65%; } }
+  @media (min-width: 1280px) {
+    .btn--primary {
+      padding: 0.1rem 1rem;
+      left: 10%;
+      top: 76%;
+      font-size: 1.5rem; } }
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.01s; }
+
+.btn--primary::after {
+  background-color: #f2275d; }
+
+.btn:hover::after {
+  transform: scaleX(1.2) scaleY(1.3);
+  opacity: 0;
+  transition: all 0.2s; }
 
 /*
   _header.scss
@@ -123,35 +244,154 @@ End CSS Reset
 .header {
   margin-bottom: 1rem;
   font-family: "Barlow", sans-serif;
-  height: 32vh;
-  background-image: url(../img/landscape.svg);
   background-size: cover;
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;
+  opacity: 0;
+  animation-name: fade-in;
+  animation-duration: 2s;
+  animation-delay: 1s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards; }
+
+@media (min-width: 0) and (max-width: 479px) {
+  .header {
+    height: 32vh;
+    background-image: url(../img/landscape.svg); } }
+
+@media (min-width: 480px) and (max-width: 639px) {
+  .header {
+    height: 50vh;
+    background-image: url(../img/landscape.svg); } }
+
+@media (min-width: 640px) and (max-width: 959px) {
+  .header {
+    height: 50vh;
+    background-image: url(../img/landscape-mask.svg); } }
+
+@media (min-width: 960px) and (max-width: 1279px) {
+  .header {
+    height: 80vh;
+    background-image: url(../img/landscape-mask.svg); } }
+  @media (min-width: 1280px) {
+    .header {
+      height: 95vh;
+      background-image: url(../img/landscape-mask.svg); } }
   .header__text-box {
     position: absolute;
-    top: 13%;
-    left: 13%;
     transform: translate(0, -50%);
     backface-visibility: hidden; }
+
+@media (min-width: 0) and (max-width: 319px) {
+  .header__text-box {
+    top: 15%;
+    left: 13%; } }
+
+@media (min-width: 320px) and (max-width: 479px) {
+  .header__text-box {
+    top: 15%;
+    left: 13%; } }
+
+@media (min-width: 480px) and (max-width: 639px) {
+  .header__text-box {
+    top: 20%;
+    left: 11%; } }
+
+@media (min-width: 640px) and (max-width: 959px) {
+  .header__text-box {
+    top: 25%;
+    left: 5%;
+    transform: translate(0, -50%); } }
+
+@media (min-width: 960px) and (max-width: 1279px) {
+  .header__text-box {
+    top: 45%;
+    left: 8%;
+    transform: translate(0, -50%); } }
+    @media (min-width: 1280px) {
+      .header__text-box {
+        top: 45%;
+        left: 4%;
+        transform: translate(0, -50%); } }
   .header__title {
     color: #5d733c;
-    font-size: 2rem;
     line-height: 0.8em;
     backface-visibility: hidden; }
+
+@media (min-width: 0) and (max-width: 319px) {
+  .header__title {
+    font-size: 2rem; } }
+
+@media (min-width: 320px) and (max-width: 479px) {
+  .header__title {
+    font-size: 2rem; } }
+
+@media (min-width: 480px) and (max-width: 639px) {
+  .header__title {
+    font-size: 3rem; } }
+
+@media (min-width: 640px) and (max-width: 959px) {
+  .header__title {
+    font-size: 4rem; } }
+
+@media (min-width: 960px) and (max-width: 1279px) {
+  .header__title {
+    font-size: 5rem; } }
+    @media (min-width: 1280px) {
+      .header__title {
+        font-size: 6rem; } }
     .header__title--thin {
       font-weight: 300;
-      display: block; }
+      display: block;
+      opacity: 0;
+      animation-name: move-from-left;
+      animation-duration: 2s;
+      animation-delay: 1s;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards; }
     .header__title--thick {
       font-weight: 700;
       letter-spacing: 0.13em;
-      display: block; }
+      display: block;
+      opacity: 0;
+      animation-name: move-from-right;
+      animation-duration: 2s;
+      animation-delay: 1s;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards; }
 
 /* Balloon */
 .balloon {
   position: absolute;
-  top: 10vh;
-  left: 48vw;
-  width: 40%; }
+  top: 20vh;
+  left: 52vw;
+  opacity: 0;
+  animation-name: move-from-top;
+  animation-duration: 2s;
+  animation-delay: 1s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards; }
+
+@media (min-width: 0) and (max-width: 479px) {
+  .balloon {
+    width: 25%;
+    top: 10vh; } }
+  @media (min-width: 480px) {
+    .balloon {
+      width: 30%;
+      top: 20vh;
+      left: 60vw; } }
+
+@media (min-width: 480px) and (max-width: 639px) {
+  .balloon {
+    width: 30%;
+    top: 20vh;
+    left: 60vw; } }
+
+@media (min-width: 640px) and (max-width: 959px) {
+  .balloon {
+    width: 24%;
+    top: 10vh;
+    left: 57vw; } }
 
 /* 
  layout/_navigation.scss 
@@ -159,14 +399,150 @@ End CSS Reset
 /* 
  layout/_info.scss 
 */
+.info {
+  background-color: rgba(207, 181, 175, 0.08);
+  padding-top: 1rem;
+  width: 100%;
+  padding: 5rem 0;
+  margin-top: -1rem; }
+
+@media (min-width: 0) and (max-width: 319px) {
+  .info {
+    padding-top: 1rem; } }
+
+@media (min-width: 320px) and (max-width: 479px) {
+  .info {
+    padding-top: 2rem; } }
+
+@media (min-width: 480px) and (max-width: 639px) {
+  .info {
+    padding-top: 2rem; } }
+
+@media (min-width: 640px) and (max-width: 959px) {
+  .info {
+    padding-top: 2rem; } }
+  @media (min-width: 960px) {
+    .info {
+      padding-top: 2rem; } }
+  .info__title {
+    color: #f2275d;
+    font-family: "Barlow", sans-serif;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1;
+    margin-bottom: 1rem; }
+
+@media (min-width: 0) and (max-width: 479px) {
+  .info__title {
+    font-size: 2rem; } }
+
+@media (min-width: 480px) and (max-width: 959px) {
+  .info__title {
+    font-size: 3rem; } }
+
+@media (min-width: 480px) and (max-width: 639px) {
+  .info__title {
+    font-size: 3rem; } }
+
+@media (min-width: 640px) and (max-width: 959px) {
+  .info__title {
+    font-size: 3rem; } }
+    @media (min-width: 960px) {
+      .info__title {
+        font-size: 4rem; } }
+  .info__text {
+    max-width: 50ch;
+    margin: 0 auto;
+    margin-bottom: 1rem; }
+
+@media (min-width: 0) and (max-width: 319px) {
+  .info__text {
+    font-size: 1rem; } }
+
+@media (min-width: 320px) and (max-width: 479px) {
+  .info__text {
+    font-size: 1.1rem; } }
+
+@media (min-width: 480px) and (max-width: 639px) {
+  .info__text {
+    font-size: 1.2rem; } }
+    @media (min-width: 640px) {
+      .info__text {
+        font-size: 1.3rem; } }
+
 /* 
  layout/_learn-more.scss 
 */
+.learn-more__box {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left top;
+  background-blend-mode: color;
+  margin-top: -4rem; }
+
+@media (min-width: 0) and (max-width: 479px) {
+  .learn-more__box {
+    background-image: linear-gradient(rgba(242, 145, 27, 0.8), rgba(242, 145, 27, 0.8)), url(../img/hot-air-ballons-cm-320x2000.jpg);
+    padding: 1rem 0.5rem 5rem; } }
+
+@media (min-width: 480px) and (max-width: 639px) {
+  .learn-more__box {
+    padding: 1rem 0.5rem 5rem;
+    background-image: linear-gradient(rgba(242, 145, 27, 0.8), rgba(242, 145, 27, 0.8)), url(../img/hot-air-ballons-cm-480x2000.jpg); } }
+
+@media (min-width: 640px) and (max-width: 959px) {
+  .learn-more__box {
+    margin-top: -2rem;
+    padding: 2rem 3rem;
+    padding-bottom: 10rem;
+    background-image: linear-gradient(rgba(242, 145, 27, 0.8), rgba(242, 145, 27, 0.8)), url(../img/hot-air-ballons-cm-480x2000.jpg); } }
+
+@media (min-width: 960px) and (max-width: 1279px) {
+  .learn-more__box {
+    margin-top: -3.5rem;
+    padding: 5rem 1rem;
+    background-image: linear-gradient(rgba(242, 145, 27, 0.8), rgba(242, 145, 27, 0.8)), url(../img/hot-air-ballons-cm-1000x1500.jpg); } }
+  @media (min-width: 1280px) {
+    .learn-more__box {
+      margin-top: -5rem;
+      padding: 5rem 1rem;
+      background-image: linear-gradient(rgba(242, 145, 27, 0.8), rgba(242, 145, 27, 0.8)), url(../img/hot-air-ballons-cm-1000x1500.jpg); } }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1rem; }
+  @media (min-width: 960px) {
+    .grid-container {
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 2rem; } }
+
+.learn-more__card {
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 4rem;
+  padding: 2rem;
+  box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.25);
+  border-radius: 1rem;
+  transition: transform 0.5s;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center; }
+
+.learn-more__card:hover {
+  transform: translateY(-1rem) scale(1.025); }
+
+.learn-more__title {
+  font-size: 1.6rem;
+  text-align: center;
+  color: #5d733c;
+  font-family: "Barlow", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.3rem; }
+
 /* 
  layout/_footer.scss 
-*/
-/* 
- components/_buttons.scss 
 */
 /* 
  pages/_home.scss 
@@ -177,3 +553,6 @@ body {
   color: #555555;
   font-family: "Montserrat", sans-serif;
   padding: 2rem; }
+
+.ipsum {
+  padding: 1rem; }

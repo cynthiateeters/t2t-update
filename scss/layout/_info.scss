@@ -2,24 +2,82 @@
  layout/_info.scss 
 */
 
-// .info {
-//   padding-top: 1rem;
-//   max-width: 60ch;
-//   margin: 0 auto;
+.info {
+  background-color: rgba(207, 181, 175, 0.08);
+  padding-top: 1rem;
+  width: 100%;
+  padding: 5rem 0;
+  margin-top: -1rem;
 
-//   &__title {
-//     color: #f2275d;
-//     font-family: "Barlow", sans-serif;
-//     font-size: 2rem;
-//     font-weight: 700;
-//     text-align: center;
-//     line-height: 1;
-//     margin-bottom: 1rem;
-//   }
+  @include media(">=0", "<xsmall") {
+    padding-top: 1rem;
+  }
 
-//   &__text {
-//     margin-bottom: 1rem;
-//     font-size: 1.1rem;
-//   }
-// }
+  @include media(">=xsmall", "<small") {
+    padding-top: 2rem;
+  }
 
+  @include media(">=small", "<medium") {
+    padding-top: 2rem;
+  }
+
+  @include media(">=medium", "<large") {
+    padding-top: 2rem;
+  }
+
+  @include media(">=large") {
+    padding-top: 2rem;
+  }
+
+
+  &__title {
+    color: #f2275d;
+    font-family: "Barlow", sans-serif;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1;
+    margin-bottom: 1rem;
+
+    @include media(">=0", "<small") {
+      font-size: 2rem;
+    }
+
+    @include media(">=small", "<large") {
+      font-size: 3rem;
+    }
+
+    @include media(">=small", "<medium") {
+      font-size: 3rem;
+    }
+
+    @include media(">=medium", "<large") {
+      font-size: 3rem;
+    }
+
+    @include media(">=large") {
+      font-size: 4rem;
+    }
+  }
+
+  &__text {
+    max-width: 50ch;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+
+    @include media(">=0", "<xsmall") {
+      font-size: 1rem;
+    }
+
+    @include media(">=xsmall", "<small") {
+      font-size: 1.1rem;
+    }
+
+    @include media(">=small", "<medium") {
+      font-size: 1.2rem;
+    }
+
+    @include media(">=medium") {
+      font-size: 1.3rem;
+    }
+  }
+}

@@ -2,14 +2,24 @@
  main.scss
 */
 
+/* VENDORS */
+
+@import 'vendors/_include-media';
+
 /* PARTIALS */
+
 @import 'abstracts/_variables';
 @import 'abstracts/_mixins';
 @import 'abstracts/_functions';
 
 @import 'base/_reset';
+@import 'base/_media-queries';
+@import 'base/_utilities';
 @import 'base/_typography';
 @import 'base/_animations';
+
+
+@import 'components/_buttons';
 
 @import 'layout/_header';
 @import 'layout/_navigation';
@@ -17,7 +27,6 @@
 @import 'layout/_learn-more';
 @import 'layout/_footer';
 
-@import 'components/_buttons';
 
 @import 'pages/_home';
 

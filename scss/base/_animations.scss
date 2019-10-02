@@ -52,6 +52,22 @@
   }
 }
 
+/* Move From Bottom */
+@keyframes move-from-bottom {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Fade In */
 @keyframes fade-in {
   0% {

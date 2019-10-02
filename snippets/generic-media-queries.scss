@@ -1,0 +1,17 @@
+@include media(">=0", "<xsmall") {
+}
+
+@include media(">=xsmall", "<small") {
+}
+
+@include media(">=small", "<medium") {
+}
+
+@include media(">=medium", "<large") {
+}
+
+@include media(">=large", "<huge") {
+}
+
+@include media(">=huge") {
+}
