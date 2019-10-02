@@ -1,0 +1,22 @@
+{
+  "name": "time-to-travel",
+  "version": "1.0.0",
+  "description": "Hot Air Balloon Travels",
+  "main": "index.js",
+  "scripts": {
+    "compile:scss": "node-sass scss/main.scss -o css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cynthiateeters/time-to-travel.git"
+  },
+  "author": "Cynthia Teeters",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cynthiateeters/time-to-travel/issues"
+  },
+  "homepage": "https://github.com/cynthiateeters/time-to-travel#readme",
+  "devDependencies": {
+    "node-sass": "^4.12.0"
+  }
+}

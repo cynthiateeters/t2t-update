@@ -1,0 +1,23 @@
+/* 
+ main.scss
+*/
+
+/* PARTIALS */
+@import 'abstracts/_variables';
+@import 'abstracts/_mixins';
+@import 'abstracts/_functions';
+
+@import 'base/_reset';
+@import 'base/_typography';
+@import 'base/_animations';
+
+@import 'layout/_header';
+@import 'layout/_navigation';
+@import 'layout/_info';
+@import 'layout/_learn-more';
+@import 'layout/_footer';
+
+@import 'components/_buttons';
+
+@import 'pages/_home';
+

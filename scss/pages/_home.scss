@@ -1,0 +1,14 @@
+/* 
+ pages/_home.scss 
+*/
+
+/*  Mobile First - No media query up to 30rem (480px) */
+
+/* Body */
+
+body {
+  color: $color-0;
+  font-family: $font-body, sans-serif;
+  padding: 2rem;
+}
+

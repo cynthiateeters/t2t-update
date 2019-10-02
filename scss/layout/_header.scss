@@ -1,0 +1,74 @@
+/*
+  _header.scss
+*/
+
+/* Header */
+
+.header {
+    margin-bottom: 1rem;
+    font-family: "Barlow", sans-serif;
+    height: 32vh;
+    background-image: url(../img/landscape.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    // opacity: 0;
+    // animation-name: fade-in;
+    // animation-duration: 2s;
+    // animation-delay: 1s;
+    // animation-timing-function: ease-out;
+    // animation-fill-mode: forwards;
+
+
+
+  &__text-box {
+    position: absolute;
+    top: 13%;
+    left: 13%;
+    transform: translate(0, -50%);
+    backface-visibility: hidden;
+  }
+
+  &__title {
+    color: $color-2;
+    font-size: 2rem;
+    line-height: 0.8em;
+    backface-visibility: hidden;
+
+    &--thin {
+      font-weight: $thin;
+      display: block;
+      // opacity: 0;
+      // animation-name: move-from-left;
+      // animation-duration: 2s;
+      // animation-delay: 1s;
+      // animation-timing-function: ease-out;
+      // animation-fill-mode: forwards;
+    }
+
+    &--thick {
+      font-weight: $thick;
+      letter-spacing: 0.13em;
+      display: block;
+      // opacity: 0;
+      // animation-name: move-from-right;
+      // animation-duration: 2s;
+      // animation-delay: 1s;
+      // animation-timing-function: ease-out;
+      // animation-fill-mode: forwards;
+    }
+  }
+}
+
+/* Balloon */
+.balloon {
+  position: absolute;
+  top: 10vh;
+  left: 48vw;
+  width: 40%;
+  // opacity: 0;
+  // animation-name: move-from-top;
+  // animation-duration: 2s;
+  // animation-delay: 1s;
+  // animation-timing-function: ease-out;
+  // animation-fill-mode: forwards;
+}

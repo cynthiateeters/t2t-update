@@ -1,0 +1,21 @@
+/* 
+ base/_typography.scss 
+*/
+
+
+/* TYPOGRAPHY */
+
+/* Font Load and Font Family */
+@import url('https://fonts.googleapis.com/css?family=Barlow:300,400,700|Montserrat&display=swap');
+
+$font-body: 'Montserrat';
+$font-title: 'Barlow';
+
+/* Font Weights */
+$thin: 300;
+$normal: 400;
+$thick: 700;
+
+:root {
+ font-size: calc(1rem + .25vw);
+}

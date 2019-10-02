@@ -1,0 +1,179 @@
+/* 
+ main.scss
+*/
+/* PARTIALS */
+/* 
+ abstracts/_variables.scss 
+*/
+/* COLOR */
+/* Color Theme Swatches in RGBA */
+/* RGBA 
+color-1: rgba(242, 39, 93, 1);
+color-2: rgba(93, 115, 60, 1);
+color-3: rgba(191, 183, 63, 1);
+color-4: rgba(242, 145, 27, 1);
+color-5: rgba(191, 155, 147, 1);
+*/
+/* Color Theme Swatches in Hex */
+/* 
+ abstracts/_functions.scss 
+*/
+/* 
+ abstracts/_functions.scss 
+*/
+/* 
+   base/_reset.scss 
+*/
+@import url("https://fonts.googleapis.com/css?family=Barlow:300,400,700|Montserrat&display=swap");
+html {
+  box-sizing: border-box;
+  font-size: 16px; }
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit; }
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  line-height: 1.7; }
+
+ol,
+ul {
+  list-style: none; }
+
+img {
+  max-width: 100%;
+  height: auto; }
+
+/*
+End CSS Reset 
+*/
+/* 
+ base/_typography.scss 
+*/
+/* TYPOGRAPHY */
+/* Font Load and Font Family */
+/* Font Weights */
+:root {
+  font-size: calc(1rem + .25vw); }
+
+/* 
+ base/_animations.scss 
+*/
+/* Animations */
+/* Move From Top */
+@keyframes move-from-top {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px); }
+  50% {
+    opacity: 1;
+    transform: translateY(20%); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+/* Move From Left */
+@keyframes move-from-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px); }
+  60% {
+    opacity: 1;
+    transform: translateX(10%); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+/* Move From Right */
+@keyframes move-from-right {
+  0% {
+    opacity: 0;
+    transform: translateX(100px); }
+  60% {
+    opacity: 1;
+    transform: translateX(-10%); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+/* Fade In */
+@keyframes fade-in {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+/*
+  _header.scss
+*/
+/* Header */
+.header {
+  margin-bottom: 1rem;
+  font-family: "Barlow", sans-serif;
+  height: 32vh;
+  background-image: url(../img/landscape.svg);
+  background-size: cover;
+  background-repeat: no-repeat; }
+  .header__text-box {
+    position: absolute;
+    top: 13%;
+    left: 13%;
+    transform: translate(0, -50%);
+    backface-visibility: hidden; }
+  .header__title {
+    color: #5d733c;
+    font-size: 2rem;
+    line-height: 0.8em;
+    backface-visibility: hidden; }
+    .header__title--thin {
+      font-weight: 300;
+      display: block; }
+    .header__title--thick {
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      display: block; }
+
+/* Balloon */
+.balloon {
+  position: absolute;
+  top: 10vh;
+  left: 48vw;
+  width: 40%; }
+
+/* 
+ layout/_navigation.scss 
+*/
+/* 
+ layout/_info.scss 
+*/
+/* 
+ layout/_learn-more.scss 
+*/
+/* 
+ layout/_footer.scss 
+*/
+/* 
+ components/_buttons.scss 
+*/
+/* 
+ pages/_home.scss 
+*/
+/*  Mobile First - No media query up to 30rem (480px) */
+/* Body */
+body {
+  color: #555555;
+  font-family: "Montserrat", sans-serif;
+  padding: 2rem; }
